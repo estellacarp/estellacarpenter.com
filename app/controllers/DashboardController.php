@@ -10,7 +10,7 @@ class DashboardController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		View::make('dashboard');
 	}
 
 	/**

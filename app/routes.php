@@ -15,3 +15,4 @@ Route::get('/', 'HomeController');
 Route::get('login', 'AuthController');
 Route::get('dashboard','DashboardController');
 Route::get('project','ProjectController');
+Route::post('login','AuthController@auth');
