@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/', 'HomeController');
-Route::get('login', 'AuthController');
-Route::get('dashboard','DashboardController');
-Route::get('project','ProjectController');
+Route::get('/', 'HomeController@index');
+Route::get('login', 'AuthController@index');
+Route::get('dashboard','DashboardController@index');
+Route::get('dashboard/add', 'DashboardController@add');
+Route::get('project','ProjectController@index');
+Route::get('project/{id}', 'ProjectController@show');
 Route::post('login','AuthController@auth');
+Route::post('logout', 'AuthController@logout');

@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('public.home',array('name'=>'Estella'));
+		return View::make('public.home', array('name'=>'Estella'));
 	}
 
 }

@@ -10,10 +10,11 @@ class AuthController extends \BaseController {
 	 */
 	public function index()
 	{
-		View::make('public.login');
+		return View::make('public.login');
 	}
+
 	public function auth(){
-		return Redirect::route('dashboard');
+		return Redirect::to('dashboard');
 	}
 	/**
 	 * Show the form for creating a new resource.
