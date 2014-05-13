@@ -20,4 +20,10 @@ class HomeController extends BaseController {
 		return View::make('public.home', array('name'=>'Estella'));
 	}
 
+	public function doLogout()
+	{
+		Auth::logout();
+		return Redirect:: to('login');
+	}
+
 }
