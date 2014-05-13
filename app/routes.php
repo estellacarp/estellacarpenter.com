@@ -19,3 +19,5 @@ Route::get('project','ProjectController@index');
 Route::get('project/{id}', 'ProjectController@show');
 Route::post('login','AuthController@auth');
 Route::post('logout', 'AuthController@logout');
+Route::get('profile', array('before' => 'auth' ,function(){
+}));

@@ -14,6 +14,8 @@ class AuthController extends \BaseController {
 	}
 
 	public function auth(){
+		if (Auth::attempt(array('email'=> $email, 'password'=>$password))){
+			return Redirect::intended('dashboard');
 		return Redirect::to('dashboard');
 	}
 	/**
