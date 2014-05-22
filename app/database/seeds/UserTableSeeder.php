@@ -7,8 +7,9 @@
 		DB::table('users')->delete();
 		User::create(array(
 		'name'=> 'Estella Carpenter',
-		'username'=>'estella@scotch.io',
-		'password'=> Hash:: make ('john'),
+		'username'=>'estella',
+		'password'=> Hash:: make (''),
+		'Email'=>'estella@hotmail',
 		));
 	}
 }
