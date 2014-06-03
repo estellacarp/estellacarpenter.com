@@ -10,7 +10,9 @@ class Projectcontroller extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$projects = Project::paginate(5);
+		
+		return View::make('public.project');
 	}
 
 	/**
