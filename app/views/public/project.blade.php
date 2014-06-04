@@ -1,9 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Project</title>
-</head>
-<body>
+@extends('layouts.public')
+
+@section('title') Projects @stop
+
+
+@section('content')
 <h1>This is My Projects</h1>
-</body>
-</html>
+
+@stop

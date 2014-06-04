@@ -21,3 +21,4 @@ Route::post('login','AuthController@auth');
 Route::post('logout', 'AuthController@logout');
 Route::get('profile', array('before' => 'auth' ,function(){}));
 Route::get('logout', array('user'=> 'homeControllerdoLogout'));
+Route::get('home','HomeController@index');

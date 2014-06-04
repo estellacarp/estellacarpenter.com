@@ -10,7 +10,8 @@ class Projectcontroller extends \BaseController {
 	 */
 	public function index()
 	{
-		$projects = Project::paginate(5);
+		$project = Project::paginate(5);
+		
 		
 		return View::make('public.project');
 	}
@@ -23,8 +24,9 @@ class Projectcontroller extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		
 	}
+
 
 	/**
 	 * Store a newly created resource in storage.
