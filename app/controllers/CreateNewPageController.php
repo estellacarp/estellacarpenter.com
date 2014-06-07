@@ -1,39 +1,20 @@
 <?php
 
-class AuthController extends \BaseController {
+class CreateNewPageController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
-	 * GET /auth
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		return View::make('public.login');
+		return View::make('public.CreateNewProject');
 	}
 
-	public function auth(){
-		$email = Input::get('email');
-		$password = Input::get('password');
-		
-		if (Auth::attempt(array('email'=> $email, 'password'=>$password))){
-			return Redirect::intended('dashboard');
-		}
-		return Redirect::to('dashboard');
-	}
 
-	public function logout(){
-			Auth::logout();
-		return Redirect::to('/');
-	}
-	// public function CreateNewProject(){
-		
-	// 	return View::make('public.CreateNewProject');
-	// }
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /auth/create
 	 *
 	 * @return Response
 	 */
@@ -42,9 +23,9 @@ class AuthController extends \BaseController {
 		//
 	}
 
+
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /auth
 	 *
 	 * @return Response
 	 */
@@ -53,9 +34,9 @@ class AuthController extends \BaseController {
 		//
 	}
 
+
 	/**
 	 * Display the specified resource.
-	 * GET /auth/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -65,9 +46,9 @@ class AuthController extends \BaseController {
 		//
 	}
 
+
 	/**
 	 * Show the form for editing the specified resource.
-	 * GET /auth/{id}/edit
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -77,9 +58,9 @@ class AuthController extends \BaseController {
 		//
 	}
 
+
 	/**
 	 * Update the specified resource in storage.
-	 * PUT /auth/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -89,9 +70,9 @@ class AuthController extends \BaseController {
 		//
 	}
 
+
 	/**
 	 * Remove the specified resource from storage.
-	 * DELETE /auth/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -100,5 +81,6 @@ class AuthController extends \BaseController {
 	{
 		//
 	}
+
 
 }

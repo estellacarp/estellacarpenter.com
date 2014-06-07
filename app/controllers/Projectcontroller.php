@@ -9,11 +9,9 @@ class Projectcontroller extends \BaseController {
 	 * @return Response
 	 */
 	public function index()
-	{
-		$project = Project::paginate(5);
-		
-		
+	{		
 		return View::make('public.project');
+		//return $project;
 	}
 
 	/**
@@ -24,7 +22,7 @@ class Projectcontroller extends \BaseController {
 	 */
 	public function create()
 	{
-		
+		//
 	}
 
 
@@ -48,7 +46,8 @@ class Projectcontroller extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$project = Project::find($id);
+		return View::make('public.project',['project'=> $project]);
 	}
 
 	/**

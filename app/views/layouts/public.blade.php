@@ -5,9 +5,9 @@
 		@yield('css')
 	</head>
 	<body>
-		<a href="{{ URL::to('login') }}">LOGIN</a>
-		<a href="{{ URL::to('project') }}">PROJECT</a>
 		<a href="{{ URL ::to('home')}}">HOME</a>
+		<a href="{{ URL::to('project') }}">PROJECT</a>
+		
 		@yield('content')
 
 	</body>

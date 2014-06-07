@@ -9,6 +9,17 @@
 @section('content')
 		<h1>Estella Carpenter</h1>
 		<h2>Welcome to my Portfolio</h2>
-		<h1>Hello, {{ $name }}</h1>
-	
+		@if (isset($projects && count($projects) > 0) )
+			@foreach ($projects as $p)
+				<article>
+					<a href="{{ url('view/'.$p->id) }}">
+						<img src ="{{ asset('img/'.$p->image) }}"/>
+						</a>
+				</article>
+			@endforeach
+		@else
+			<p>No Projects</p>
+		@endif
+		
+	<a href="{{ URL::to('login') }}">LOGIN</a>
 @stop

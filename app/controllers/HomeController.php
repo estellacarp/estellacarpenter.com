@@ -17,7 +17,8 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		return View::make('public.home', array('name'=>'Estella'));
+		$projects = Project::paginate(5);
+		return View::make('public.home', array('projects'=>$projects));
 	}
 
 	public function doLogout()
