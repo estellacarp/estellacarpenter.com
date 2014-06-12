@@ -1,6 +1,6 @@
 <?php
 
-class CreateNewPageController extends \BaseController {
+class CreateController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class CreateNewPageController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('public.CreateNewProject');
+		return View::make('dashboard.create');
 	}
 
 
@@ -31,7 +31,19 @@ class CreateNewPageController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$validation = Validator:: make(Input::all(), Project::$rules);
+
+		if($validation-> fails()){
+			return Redirect::back()->withInput()->withErrors($validation->messages());
+		} 
+
+		$project = new project;
+		$project-> Title = Input::get('Title');
+		$project->Description = Input::get('Description');
+		$project->save();
+
+		return Redirect:: to('create');
+		
 	}
 
 

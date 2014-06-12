@@ -12,19 +12,26 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('home','HomeController@index');
 Route::get('login', 'AuthController@index');
+Route::post('login','AuthController@auth');
+Route::get('logout', array('user'=> 'homeControllerdoLogout'));
+Route::post('logout', 'AuthController@logout');
 Route::get('dashboard','DashboardController@index');
 Route::get('dashboard/add', 'DashboardController@add');
 Route::get('project','ProjectController@index');
- Route::get('project/{id}', 'ProjectController@show');
-Route::post('login','AuthController@auth');
-
+Route::get('project/{id}', 'ProjectController@show');
 Route::get('profile', array('before' => 'auth' ,function(){}));
-Route::get('logout', array('user'=> 'homeControllerdoLogout'));
-Route::post('logout', 'AuthController@logout');
-Route::get('home','HomeController@index');
-Route:: get('CreateNewProject','CreateNewPageController@index');
+Route::get('CreateNewProject','CreateNewPageController@index');
 Route::post('CreateNewProject','CreateNewPageController@index');
+Route::get('create','Createcontroller@index');
+Route::post('create','Createcontroller@index');
+Route::get('cancel', array(''));
+Route::post('cancel', 'DashboardController@index');
+Route::post('save','CreateController@store');
+Route::get('save', array(''));
+Route::get('editPage','DashboardController@editPage');
+
 // Route::get('project/{project}',function($project)
 // {
 // 	$project = Project::all();

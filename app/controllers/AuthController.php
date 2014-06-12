@@ -27,6 +27,14 @@ class AuthController extends \BaseController {
 			Auth::logout();
 		return Redirect::to('/');
 	}
+
+	public function save(){
+
+	}
+	
+	Public function cancel(){
+		return Redirect::to('dashboard');
+	}
 	// public function CreateNewProject(){
 		
 	// 	return View::make('public.CreateNewProject');

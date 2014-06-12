@@ -20,6 +20,6 @@
 		@else
 			<p>No Projects</p>
 		@endif
-		
 	<a href="{{ URL::to('login') }}">LOGIN</a>
+	@stop
 @stop

@@ -4,30 +4,23 @@
 
 
 @section('content')
-<H1>Hello this is the create a new project</H1>
 
-{{Form::open(['url' => 'save'])}}
+<H1>Hello this the edit page</H1>
+{{Form::open(['url' => 'Save'])}}
 <div>
 {{Form::label('Title','Title:')}}
 {{Form::text('Title')}}
-{{$errors->first('Title')}}
 </div>
 
 <div>
-{{Form::label('Description','Description:')}}
+{{Form::label('Description','Descrition:')}}
 {{Form::text('Description')}}
-{{$errors->first('Description')}}
 </div>
-
 <div>
 <img src=""/>
 </div>
 <div>
-{{Form::Submit('save')}}
-
-</div>
-<div>
-{{Form::Submit('Upload')}}
+{{Form::Submit('Save')}}
 
 </div>
 {{Form::close()}}
@@ -36,4 +29,3 @@
 {{Form::Submit('Cancel')}}
 {{Form::close()}}
 @stop
-

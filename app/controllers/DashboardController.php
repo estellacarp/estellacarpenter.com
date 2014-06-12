@@ -12,6 +12,9 @@ class DashboardController extends \BaseController {
 	{
 		return View::make('dashboard.index');
 	}
+	public function editPage(){
+		return View::make('dashboard.editPage');
+	}
 
 	/**
 	 * Show the form for creating a new resource.
