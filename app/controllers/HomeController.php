@@ -17,10 +17,12 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
+		$projects = Project::paginate(5);
+		return View::make('public.home', compact('projects'))->withProject($projects);
 		// return View:: make('public.home', array('projects','$p'));
-		// $projects = Project::paginate(5);
 		// return View::make('public.home', array('projects'=>$projects));
-		return View::make('public.home'); 
+		 
+		
 	}
 
 	public function doLogout()

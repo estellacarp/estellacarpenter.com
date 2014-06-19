@@ -11,9 +11,12 @@
 
 <h1>{{$projects->Title}}</h1>
 <article>
+			<!-- {{$name = 'asset/' . $projects->Title .'.jpg'}} -->
+			<img src="{{asset($name)}}" alt="{{ $projects->Title}}">
+			<br/>
 			{{$projects->Description}}
 </article>
-<br/>
+<hr>
 {{ link_to('dashboard', 'To Dashboard')}}
 <br/>
 {{ link_to('project', 'To Project')}}

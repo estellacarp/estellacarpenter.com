@@ -15,7 +15,6 @@
 		
 		<a href="{{ URL::to('home') }}">HOME</a>
 		<a href="{{ URL::to('create') }}">Create</a>
-		<a href="{{ URL::to('editPage') }}">Edit</a>
 		<a href="{{ URL ::to('dashboard')}}">DASHBOARD</a>
 		<a href="{{ URL::to('project') }}">PROJECT</a>
 		

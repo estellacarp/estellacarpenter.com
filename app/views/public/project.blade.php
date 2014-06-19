@@ -16,13 +16,13 @@
 	@foreach ($project as $projects)
 	
 		<div class = "row">
-			<div class ="clo-sm-6 col-md-4">
+			<div class ="clo-sm-6 col-md-6">
 				<div class ="thumbnail">
-					<img src="{{asset('asset/ClearSight.jpg')}}" alt="clear Sight">	
 					<div class = "caption">
 						<h1>{{ link_to("dashboard/$projects->id", $projects->Title)}}</h1>
-						<br/>
-						{{$projects->Description}}
+						<!-- {{$name = 'asset/' . $projects->Title .'.jpg'}} -->
+						<img src="{{asset($name)}}" alt="{{ $projects->Title}}"/>
+						<p>{{$projects->Description}}</p>
 					</div>						
 				</div>	
 			</div>

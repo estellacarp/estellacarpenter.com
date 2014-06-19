@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
+		<div class = "container col-md-6 col-md-offset-1">
 		<a href="{{ URL ::to('home')}}">HOME</a>
 		<a href="{{ URL::to('project') }}">PROJECT</a>
 		

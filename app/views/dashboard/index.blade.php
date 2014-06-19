@@ -33,7 +33,8 @@
 				</td>
 				<td>
 					<li class = "list-group-item">
-						<img src="{{$projects->Image}}"alt = "{{$projects->Title}}">
+						<!-- {{$name = 'asset/' . $projects->Title .'.jpg'}} -->
+					<img src="{{asset($name)}}" alt="{{ $projects->Title}}">
 					</li>
 				</td>
 				<td width="50px">
