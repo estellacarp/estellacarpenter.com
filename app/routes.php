@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('home','HomeController@index');
-Route::get('logout', array('user'=> 'homeControllerdoLogout'));
+Route::get('logout', array('user'=> 'homeController@doLogout'));
 
 Route::get('login', 'AuthController@index');
 Route::post('login','AuthController@auth');
