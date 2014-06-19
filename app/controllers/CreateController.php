@@ -36,17 +36,32 @@ class CreateController extends \BaseController {
 		if($validation-> fails()){
 			return Redirect::back()->withInput()->withErrors($validation->messages());
 		} 
+		$projects = new Project;
+		$projects->Title = Input::get('Title');
+		$projects->Description = Input::get('Description');
 
-		$project = new project;
-		$project-> Title = Input::get('Title');
-		$project->Description = Input::get('Description');
-		$project->save();
+		if (Input::hasFile('image'))
+		{
+			$file = Input::file('image');
+			$name = $projects->Title .'.jpg';
+			$file = $file->move(public_path().'/asset/', $name);
+			$projects->Image = $name;
+		}
+		$projects->save();
+
+		// $project = new project;
+		// $project->Title = Input::get('Title');
+		// $project->Description = Input::get('Description');
+		
+		// $project->save();
+
+		
 
 		return Redirect:: to('create');
 		
 	}
 
-
+	
 	/**
 	 * Display the specified resource.
 	 *
@@ -67,7 +82,9 @@ class CreateController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$projects = Project::find($id);
+	
+		return View::make('public.editPage')->withproject($projects);
 	}
 
 
@@ -79,7 +96,13 @@ class CreateController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+	
+		$projects= Project::find($id);
+		$projects->Title = 'newName';
+		$projects->save();
+
+			
+		return Redirect:: to('dashboard');
 	}
 
 
@@ -91,7 +114,12 @@ class CreateController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		
+		$projects = Project::find($id);
+		$projects->delete();
+		
+
+		return Redirect:: to('dashboard');
 	}
 
 

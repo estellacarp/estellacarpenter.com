@@ -5,7 +5,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class Project extends Eloquent implements UserInterface, RemindableInterface {
 
-	protected $fillable = ['Title', 'Description'];
+	protected $fillable = ['Title', 'Description','Image'];
 
 	public static $rules = [
 	'Title'=>'required', 

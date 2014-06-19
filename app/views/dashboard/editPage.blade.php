@@ -1,29 +1,43 @@
 @extends('layouts.private')
 
-@section('title') Create New Project @stop
+@section('title') Edit Project @stop
 
 
 @section('content')
 
 <H1>Hello this the edit page</H1>
-{{Form::open(['url' => 'Save'])}}
+{{Form::model($projects,['url' =>'update', 'files'=>true])}}
+
+<div>
+{{Form::label('id','ID:' )}}
+{{Form::text('id')}}
+{{$errors->first('id')}}
+</div>
+
 <div>
 {{Form::label('Title','Title:')}}
 {{Form::text('Title')}}
 </div>
 
 <div>
-{{Form::label('Description','Descrition:')}}
-{{Form::text('Description')}}
+{{Form::label('Description','Description:')}}
+{{Form::textarea('Description')}}
 </div>
+
 <div>
-<img src=""/>
+{{Form::label('Image','Image Upload:')}}
+{{Form::file('image')}}
 </div>
+
+
 <div>
-{{Form::Submit('Save')}}
+{{Form::Submit('Save Update')}}
 
 </div>
+
 {{Form::close()}}
+
+<!--  -->
 
 {{Form::open(['url' =>'cancel'])}}
 {{Form::Submit('Cancel')}}

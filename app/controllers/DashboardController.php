@@ -10,9 +10,12 @@ class DashboardController extends \BaseController {
 	 */
 	public function index()
 	{
-		return View::make('dashboard.index');
+		$projects = Project::all();
+		return View::make('dashboard.index', compact('projects'))->withProject($projects);
 	}
+
 	public function editPage(){
+
 		return View::make('dashboard.editPage');
 	}
 
@@ -35,7 +38,7 @@ class DashboardController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		
 	}
 
 	/**
@@ -47,9 +50,10 @@ class DashboardController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
-	}
+		$projects = Project::findOrFail($id);
 
+		return View::make('public.siteView',['projects'=> $projects]);
+	}
 	/**
 	 * Show the form for editing the specified resource.
 	 * GET /dashboard/{id}/edit
@@ -59,7 +63,9 @@ class DashboardController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$projects = Project::findOrFail($id);
+
+		return View::make('dashboard.editPage',['projects'=> $projects]);
 	}
 
 	/**
