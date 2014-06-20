@@ -46,8 +46,6 @@ Route::get('deleteRow/{id}','Createcontroller@destroy');
 
 Route::get('profile', array('before' => 'auth' ,function(){}));
 
-// Route::get('project/{project}',function($project)
-// {
-// 	$project = Project::all();
-// 	return View::make('project.show', ['project'=>$project]);
-// });
+
+Route::get('tasks', 'TaskController@index');
+Route::get('tasks/{id}','TaskController@show')->where('id','\d+');

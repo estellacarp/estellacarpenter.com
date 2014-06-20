@@ -17,11 +17,9 @@ class HomeController extends BaseController {
 
 	public function index()
 	{
-		$projects = Project::paginate(5);
-		return View::make('public.home', compact('projects'))->withProject($projects);
-		// return View:: make('public.home', array('projects','$p'));
-		// return View::make('public.home', array('projects'=>$projects));
-		 
+		$projects = Project::all();
+		 return View::make('public.home')->withProject($projects);
+
 		
 	}
 

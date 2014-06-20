@@ -9,17 +9,18 @@
 @section('content')
 		<h1>Estella Carpenter</h1>
 		<h2>Welcome to my Portfolio</h2>
-		@if (isset($projects && count($projects) > 0) )
-			@foreach ($projects as $p)
+		@if (isset($project))
+			@foreach ($project as $projects)
 				<article>
-					<a href="{{ url('view/'.$projects->id) }}">
-						<img src ="{{ asset('img/'.$projects->image) }}"/>
-						</a>
+					<a href="{{ url('dashboard/'.$projects->id) }}">
+					<h1>{{$projects->Title}}</h1>	
+					<!-- {{$name = 'asset/' . $projects->Title .'.jpg'}} -->
+						<img src="{{asset($name)}}" alt="{{ $projects->Title}}"/>
+					</a>
 				</article>
 			@endforeach
 		@else
 			<p>No Projects</p>
 		@endif
-	<a href="{{ URL::to('login') }}">LOGIN</a>
-	@stop
+		
 @stop
