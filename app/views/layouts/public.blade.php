@@ -8,8 +8,8 @@
 	</head>
 	<body>
 		<div class = "container col-md-6 col-md-offset-1">
-		<h3><a href="{{ URL ::to('home')}}">HOME</a>
-		<a href="{{ URL::to('project') }}">PROJECT</a></h3>
+		<h4><a href="{{ URL ::to('home')}}">HOME</a>
+		<a href="{{ URL::to('project') }}">PROJECT</a></h4>
 		
 		@yield('content')
 

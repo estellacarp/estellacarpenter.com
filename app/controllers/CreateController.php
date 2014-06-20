@@ -57,7 +57,7 @@ class CreateController extends \BaseController {
 
 		
 
-		return Redirect:: to('create');
+		return Redirect:: to('dashboard');
 		
 	}
 
@@ -98,7 +98,17 @@ class CreateController extends \BaseController {
 	{
 	
 		$projects= Project::find($id);
-		$projects->Title = 'newName';
+		$projects->Title = Input::get('Title');
+		$projects->Description = Input::get('Description');
+
+		if (Input::hasFile('image'))
+		{
+			$file = Input::file('image');
+			$name = $projects->Title .'.jpg';
+			$file = $file->move(public_path().'/asset/', $name);
+			$projects->Image = $name;
+		}
+		
 		$projects->save();
 
 			

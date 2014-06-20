@@ -13,10 +13,11 @@
 			</form>
 		<div class = "container col-md-6 col-md-offset-1">
 		
-		<a href="{{ URL::to('home') }}">HOME</a>
+		<h4><a href="{{ URL::to('home') }}">HOME</a>
 		<a href="{{ URL::to('create') }}">Create</a>
 		<a href="{{ URL ::to('dashboard')}}">DASHBOARD</a>
-		<a href="{{ URL::to('project') }}">PROJECT</a>
+		<a href="{{ URL::to('project') }}">PROJECT</a></h4>
+
 		
 		@yield('content')
 

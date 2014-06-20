@@ -5,8 +5,7 @@
 
 @section('content')
 
-<h1>Dashboard</h1>
-<h1>My Projects</h1>
+<h1>Dashboard Projects</h1>
 	<table>
 		<thead>
 			<tr>

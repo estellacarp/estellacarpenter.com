@@ -16,6 +16,7 @@
 					<h1>{{$projects->Title}}</h1>	
 					<!-- {{$name = 'asset/' . $projects->Title .'.jpg'}} -->
 						<img src="{{asset($name)}}" alt="{{ $projects->Title}}"/>
+						<hr>
 					</a>
 				</article>
 			@endforeach

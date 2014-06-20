@@ -37,7 +37,7 @@ Route::get('create','Createcontroller@index');
 Route::post('create','Createcontroller@index');
 Route::post('save','CreateController@store');
 Route::get('save', array(''));
-Route::post('update','CreateController@update');
+Route::post('update/{id}','CreateController@update');
 Route::get('update', array(''));
 
 

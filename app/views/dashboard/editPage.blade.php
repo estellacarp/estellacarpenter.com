@@ -7,10 +7,11 @@
 
 <H1>Hello this the edit page</H1>
 
-{{Form::model($projects,['url' =>'update', 'files'=>true])}}
+{{Form::model($projects,['url' =>'update/'.$projects->id, 'files'=>true])}}
 @include('layouts/formInput')
 {{Form::Submit('Save Update', ['class' => 'btn btn-primary'])}}
 {{Form::close()}}
 
 @include('layouts/formCancel')
+
 @stop

@@ -16,10 +16,13 @@ class HomeController extends BaseController {
 	*/
 
 	public function index()
-	{
-		$projects = Project::all();
-		 return View::make('public.home')->withProject($projects);
 
+	{
+	
+		$projects = Project::paginate(10);
+		return View::make('public.home', compact('projects'))->withProject($projects);
+		
+		 
 		
 	}
 
