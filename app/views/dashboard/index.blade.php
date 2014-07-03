@@ -10,7 +10,7 @@
 		<thead>
 			<tr>
 			<td>ID</td>
-			<td>Title</td>
+			<!-- <td>Title</td> -->
 			<td></td>
 			<td>Edit</td>
 			<td>Delete</td>
@@ -25,15 +25,16 @@
 						{{ $projects->id}}
 					</li>
 				</td>
-				<td width="150px">
+				<!-- <td width="150px">
 					<li class = "list-group-item">
 						{{ link_to("dashboard/$projects->id", $projects->Title)}}
 					</li>
-				</td>
+				</td> -->
 				<td>
 					<li class = "list-group-item">
-						<!-- {{$name = 'asset/' . $projects->Title .'.jpg'}} -->
+						<!-- {{$name = 'asset/' . $projects->Image}} -->
 					<img src="{{asset($name)}}" alt="{{ $projects->Title}}">
+					{{ $projects->Title}}
 					</li>
 				</td>
 				<td width="50px">

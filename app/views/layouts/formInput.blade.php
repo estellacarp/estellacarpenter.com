@@ -14,15 +14,18 @@
 </div>
 
 <div class ='form-group'>
+{{Form::label('Lang','Languages and tools:')}}
+{{Form::textarea('Lang' , null, ['class' => 'form-control'])}}
+{{$errors->first('Lang')}}
+</div>
+
+<div class ='form-group'>
 {{Form::label('Image','Image Upload:')}}
 {{Form::file('image' , null, ['class' => 'form-control'])}}
 </div>
 
-<!-- <div>
-<img src="{{asset('asset/ClearSight.jpg')}}" alt="clear Sight
-" height = "100px">
-</div> -->
-<div class ='form-group'>
+
+
 
 
 

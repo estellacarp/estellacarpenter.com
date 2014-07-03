@@ -18,6 +18,7 @@ class CreateProjectsTable extends Migration {
 			$table->string('Title')->unique();
 			$table->string('Description');
 			$table->string('Image');
+			$table->string('lang');
 			$table->timestamps();
 		});
 	}

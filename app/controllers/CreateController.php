@@ -39,6 +39,7 @@ class CreateController extends \BaseController {
 		$projects = new Project;
 		$projects->Title = Input::get('Title');
 		$projects->Description = Input::get('Description');
+		$projects->Lang = Input::get('Lang');
 
 		if (Input::hasFile('image'))
 		{
@@ -57,7 +58,7 @@ class CreateController extends \BaseController {
 
 		
 
-		return Redirect:: to('dashboard');
+		return Redirect:: to('dashboard')->withMessage('Save was Successful');
 		
 	}
 
@@ -100,19 +101,21 @@ class CreateController extends \BaseController {
 		$projects= Project::find($id);
 		$projects->Title = Input::get('Title');
 		$projects->Description = Input::get('Description');
+		$projects->Lang = Input::get('Lang');
 
 		if (Input::hasFile('image'))
-		{
-			$file = Input::file('image');
-			$name = $projects->Title .'.jpg';
-			$file = $file->move(public_path().'/asset/', $name);
-			$projects->Image = $name;
-		}
+			{
+				$file = Input::file('image');
+				$name = $projects->Title .'.jpg';
+				$file = $file->move(public_path().'/asset/', $name);
+				$projects->Image = $name;
+			}
+		
 		
 		$projects->save();
 
 			
-		return Redirect:: to('dashboard');
+		return Redirect:: to('dashboard')->withMessage('The Data has been changed');
 	}
 
 

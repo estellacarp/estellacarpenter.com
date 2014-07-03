@@ -5,7 +5,10 @@
 
 @section('content')
 
-<H1>Hello this the edit page</H1>
+
+<H1>Hello this to edit a project</H1>
+
+@include('layouts/view')
 
 {{Form::model($projects,['url' =>'update/'.$projects->id, 'files'=>true])}}
 @include('layouts/formInput')

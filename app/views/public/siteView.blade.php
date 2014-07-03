@@ -9,17 +9,15 @@
 <h1> Project View</h1>
 
 
-<h1>{{$projects->Title}}</h1>
+
 <article>
-			<!-- {{$name = 'asset/' . $projects->Title .'.jpg'}} -->
-			<img src="{{asset($name)}}" alt="{{ $projects->Title}}">
-			<br/>
-			{{$projects->Description}}
+			@include('layouts/view')
+
 </article>
 <hr>
-{{ link_to('dashboard', 'To Dashboard')}}
-<br/>
-{{ link_to('project', 'To Project')}}
+<a href="{{ URL ::previous() }}">Back</a>
+
+
 
 @stop
 @stop

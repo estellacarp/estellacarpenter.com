@@ -10,7 +10,8 @@ class DashboardController extends \BaseController {
 	 */
 	public function index()
 	{
-		$projects = Project::all();
+		
+	$projects = Project::paginate(10);
 		return View::make('dashboard.index', compact('projects'))->withProject($projects);
 	}
 

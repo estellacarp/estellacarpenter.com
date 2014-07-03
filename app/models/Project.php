@@ -5,11 +5,12 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class Project extends Eloquent implements UserInterface, RemindableInterface {
 
-	protected $fillable = ['Title', 'Description','Image'];
+	protected $fillable = ['Title', 'Description','Image','Lang'];
 
 	public static $rules = [
 	'Title'=>'required', 
-	'Description'=> 'required'
+	'Description'=> 'required',
+	'Lang'=> 'required'
 	];
 
 	public $errors;

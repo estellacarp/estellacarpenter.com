@@ -13,11 +13,9 @@
 			@foreach ($project as $projects)
 				<article>
 					<a href="{{ url('dashboard/'.$projects->id) }}">
-					<h1>{{$projects->Title}}</h1>	
-					<!-- {{$name = 'asset/' . $projects->Title .'.jpg'}} -->
-						<img src="{{asset($name)}}" alt="{{ $projects->Title}}"/>
+						@include('layouts/view')
 						<hr>
-					</a>
+					</a>		
 				</article>
 			@endforeach
 		@else
