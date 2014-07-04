@@ -19,6 +19,6 @@
 			'username'=>'Kalissa',
 			'password'=> '123',
 			'Email'=>'Kalissa@gmail.com',
-			])
+			]);
 	}
 }
