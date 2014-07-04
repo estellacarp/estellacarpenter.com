@@ -17,9 +17,7 @@
 				<div class="col-md-4">
 					<a href="{{ url('project/'.$project->id) }}">
 					@include('layouts/view', ['project'=>$project])
-							
-						
-						<hr>
+					<hr>
 					</a>
 
 			</div>

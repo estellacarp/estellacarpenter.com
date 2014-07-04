@@ -22,12 +22,12 @@ Route::post('logout', 'AuthController@logout');
 Route::group(array('before'=>'auth'), function (){
 
 Route::get('project','ProjectController@index');
-Route::get('project/{id}', 'ProjectController@show');
-Route::get('project/{Title}', 'ProjectController@showTitle');
+Route::get('project/{id}','ProjectController@show');
+Route::get('project/{Title}','ProjectController@showTitle');
 
 Route::get('dashboard','DashboardController@index');
-Route::get('dashboard/add', 'DashboardController@add');
-Route::get('dashboard/{id}', 'DashboardController@show')->where('id','\d+');
+Route::get('dashboard/add','DashboardController@add');
+Route::get('dashboard/{id}','DashboardController@show')->where('id','\d+');
 Route::get('editPage','DashboardController@editPage');
 Route::get('editPage/{id}','DashboardController@edit');
 Route::get('siteView','DashboardController@show');
