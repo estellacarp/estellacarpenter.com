@@ -12,13 +12,13 @@ class CreateProjectsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('projects', function(Blueprint $table)
+		Schema::create('projects', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('Title')->unique();
 			$table->string('Description');
 			$table->string('Image');
-			$table->string('lang');
+			$table->string('Lang');
 			$table->timestamps();
 		});
 	}
