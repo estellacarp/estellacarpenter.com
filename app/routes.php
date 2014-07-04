@@ -34,8 +34,8 @@ Route::get('siteView','DashboardController@show');
 Route::post('cancel', 'DashboardController@index');
 Route::get('cancel', array(''));
 
-Route::get('create','Createcontroller@index');
-Route::post('create','Createcontroller@index');
+Route::get('create','CreateController@index');
+Route::post('create','CreateController@index');
 Route::post('save','CreateController@store');
 Route::get('save', array(''));
 Route::post('update/{id}','CreateController@update');
