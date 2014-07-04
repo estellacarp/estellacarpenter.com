@@ -20,7 +20,7 @@ class AuthController extends \BaseController {
 		if (Auth::attempt(array('email'=> $email, 'password'=>$password))){
 			return Redirect::intended('dashboard');
 		}
-		return Redirect::to('dashboard');
+		return Redirect::to('login');
 	}
 
 	public function logout(){

@@ -13,7 +13,8 @@ class Projectcontroller extends \BaseController {
 		
 		
 		$projects = Project::all();
-		return View::make('public.project')->withProject($projects);
+		return View::make('public.project', ['projects'=> $projects]);
+		// ->withProject($projects);
 		// $projects =DB::table('projects');
 		// return $projects->Title;
 	}
@@ -52,15 +53,15 @@ class Projectcontroller extends \BaseController {
 	{
 		$project = Project::find($id);
 			
-		return View::make('public.project',['projects'=> $project]);
+		return View::make('public.project',['project'=> $project]);
 	}
 
 
 	public function showTitle($Title){
 
-		$project = Project::whereTitle($Title)->first();
-		// return View::make('public.project',['projects'=> $project]);
-		return View::make('public.project')->withProject($projects);
+		$project = Project::where('Title', '=', $Title)->first();
+		return View::make('public.project',['project'=> $project]);
+		
 	}
 
 	/**

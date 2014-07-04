@@ -19,6 +19,12 @@ Route::get('login', 'AuthController@index');
 Route::post('login','AuthController@auth');
 Route::post('logout', 'AuthController@logout');
 
+Route::group(array('before'=>'auth'), function (){
+
+Route::get('project','ProjectController@index');
+Route::get('project/{id}', 'ProjectController@show');
+Route::get('project/{Title}', 'ProjectController@showTitle');
+
 Route::get('dashboard','DashboardController@index');
 Route::get('dashboard/add', 'DashboardController@add');
 Route::get('dashboard/{id}', 'DashboardController@show')->where('id','\d+');
@@ -27,11 +33,6 @@ Route::get('editPage/{id}','DashboardController@edit');
 Route::get('siteView','DashboardController@show');
 Route::post('cancel', 'DashboardController@index');
 Route::get('cancel', array(''));
-
-Route::get('project','ProjectController@index');
-Route::get('project/{id}', 'ProjectController@show');
-Route::get('project/{Title}', 'ProjectController@showTitle');
-
 
 Route::get('create','Createcontroller@index');
 Route::post('create','Createcontroller@index');
@@ -49,3 +50,5 @@ Route::get('profile', array('before' => 'auth' ,function(){}));
 
 Route::get('tasks', 'TaskController@index');
 Route::get('tasks/{id}','TaskController@show')->where('id','\d+');
+
+});

@@ -9,17 +9,23 @@
 @section('content')
 		<h1>Estella Carpenter</h1>
 		<h2>Welcome to my Portfolio</h2>
-		@if (isset($project))
-			@foreach ($project as $projects)
-				<article>
-					<a href="{{ url('dashboard/'.$projects->id) }}">
-						@include('layouts/view')
+		<div class="row">
+			
+		
+		@if (isset($projects))
+			@foreach ($projects as $project)
+				<div class="col-md-4">
+					<a href="{{ url('project/'.$project->id) }}">
+					@include('layouts/view', ['project'=>$project])
+							
+						
 						<hr>
-					</a>		
-				</article>
+					</a>
+
+			</div>
 			@endforeach
 		@else
 			<p>No Projects</p>
 		@endif
-		
+		</div>
 @stop

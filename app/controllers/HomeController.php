@@ -20,7 +20,8 @@ class HomeController extends BaseController {
 	{
 	
 		$projects = Project::paginate(10);
-		return View::make('public.home', compact('projects'))->withProject($projects);
+		
+		return View::make('public.home',['projects'=>$projects] );
 		
 		 
 		
