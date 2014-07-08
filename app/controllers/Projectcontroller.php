@@ -1,6 +1,6 @@
 <?php
 
-class Projectcontroller extends \BaseController {
+class ProjectController extends \BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,11 +15,8 @@ class Projectcontroller extends \BaseController {
 		$projects = Project::all();
 
 		return View::make('public.project', ['projects'=> $projects]);
-		// ->withProject($projects);
-		// $projects =DB::table('projects');
-		// return $projects->Title;
-	}
-
+		
+}
 	/**
 	 * Show the form for creating a new resource.
 	 * GET /projectcontroller/create

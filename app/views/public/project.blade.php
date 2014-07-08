@@ -18,6 +18,7 @@
 							@include('layouts/view', ['projects'=>$project])
 						
 						</article>
+						<a href="{{ URL ::previous() }}">Back</a>
 					</div>						
 				</div>	
 			</div>
