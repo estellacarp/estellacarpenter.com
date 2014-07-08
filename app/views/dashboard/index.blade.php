@@ -32,7 +32,7 @@
 				</td> -->
 				<td>
 					<li class = "list-group-item">
-						<!-- {{$name = 'asset/' . $projects->Image}} -->
+						<!-- {{$name = 'asset/image/' . $projects->Image}} -->
 					<img src="{{asset($name)}}" alt="{{ $projects->Title}}">
 					{{ $projects->Title}}
 					</li>
