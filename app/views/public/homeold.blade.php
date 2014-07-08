@@ -11,11 +11,7 @@
 		<h2>Welcome to my Portfolio</h2>
 	@if (isset($projects && count($projects) > 0) )
 		@foreach ($projects as $p)
-				<article>
-					<a href="{{ url('view/'.$projects->id) }}">
-						<img src ="{{ asset('img/'.$projects->image) }}"/>
-					</a>
-				</article>
+				
 			@endforeach
 	@else
 		<p>No Projects</p>

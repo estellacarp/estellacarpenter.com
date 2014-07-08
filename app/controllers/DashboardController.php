@@ -12,7 +12,7 @@ class DashboardController extends \BaseController {
 	{
 		
 	$projects = Project::paginate(10);
-		return View::make('dashboard.index', compact('projects'))->withProject($projects);
+		return View::make('dashboard.index', ['projects'=> $projects]);
 	}
 
 	public function editPage(){

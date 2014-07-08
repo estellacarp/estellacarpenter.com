@@ -16,7 +16,7 @@
 			@foreach ($projects as $project)
 				<div class="col-md-4">
 					<a href="{{ url('project/'.$project->id) }}">
-					@include('layouts/view', ['project'=>$project])
+					@include('layouts/view', ['projects'=>$project])
 					<hr>
 					</a>
 

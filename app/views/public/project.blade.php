@@ -15,7 +15,7 @@
 					<div class = "caption">
 						<article>
 							
-							@include('layouts/view', ['project'=>$project])
+							@include('layouts/view', ['projects'=>$project])
 						
 						</article>
 					</div>						

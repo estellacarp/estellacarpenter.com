@@ -18,7 +18,7 @@
 		</thead>
 		<tbody>
 		<ul class ="list-group">
-			@foreach ($project as $projects)
+			@foreach ($projects as $projects)
 			<tr>
 				<td width="50px">
 					<li class = "list-group-item">

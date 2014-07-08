@@ -1,9 +1,11 @@
 
 	<article>
-		<h1>{{$project->Title}}</h1>
-		<img src="{{asset('asset/' . $project->Title .'.jpg')}}" alt="{{ $project->Title}}">
+		<h1>{{$projects->Title}}</h1>
+		<!-- {{$name = 'asset/' . $projects->Image}} -->
+		<img src="{{asset($name)}}" alt="{{ $projects->Title}}">
 		<br/>
-		{{$project->Description}}
+		{{$projects->Description}}
 		<br/>
-		{{$project->Lang}}
+		{{$projects->Lang}}
 	</article>
+

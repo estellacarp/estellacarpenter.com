@@ -43,7 +43,7 @@ Route::get('update', array(''));
 
 
 
-Route::get('deleteRow/{id}','Createcontroller@destroy');
+Route::get('deleteRow/{id}','CreateController@destroy');
 
 Route::get('profile', array('before' => 'auth' ,function(){}));
 

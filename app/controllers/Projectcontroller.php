@@ -13,6 +13,7 @@ class Projectcontroller extends \BaseController {
 		
 		
 		$projects = Project::all();
+
 		return View::make('public.project', ['projects'=> $projects]);
 		// ->withProject($projects);
 		// $projects =DB::table('projects');
