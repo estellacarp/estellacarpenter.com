@@ -15,15 +15,17 @@ Route::get('/', 'HomeController@index');
 Route::get('home','HomeController@index');
 Route::get('logout', array('user'=> 'homeController@doLogout'));
 
+Route::get('project','ProjectController@index');
+Route::get('project/{id}','ProjectController@show');
+Route::get('project/{Title}','ProjectController@showTitle');
+
 Route::get('login', 'AuthController@index');
 Route::post('login','AuthController@auth');
 Route::post('logout', 'AuthController@logout');
 
 Route::group(array('before'=>'auth'), function (){
 
-Route::get('project','ProjectController@index');
-Route::get('project/{id}','ProjectController@show');
-Route::get('project/{Title}','ProjectController@showTitle');
+
 
 Route::get('dashboard','DashboardController@index');
 Route::get('dashboard/add','DashboardController@add');
