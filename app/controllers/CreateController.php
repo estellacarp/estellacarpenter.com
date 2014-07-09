@@ -108,7 +108,7 @@ class CreateController extends \BaseController {
 			{
 				$file = Input::file('image');
 				$name = $projects->Title .'.jpg';
-				$file = $file->move(public_path().'/asset/image', $name);
+				$file = $file->move(public_path().'/asset/', $name);
 				$projects->Image = $name;
 			}
 		
