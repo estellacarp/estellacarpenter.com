@@ -29,46 +29,47 @@ class CreateController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function store()
-	{
-		$validation = Validator:: make(Input::all(), Project::$rules);
+		public function store()
+			{
+			$validation = Validator:: make(Input::all(), Project::$rules);
 
-		if($validation-> fails()){
+			if($validation-> fails()){
 			return Redirect::back()->withInput()->withErrors($validation->messages());
-		} 
-		$projects = new Project;
-		$projects->Title = Input::get('Title');
-		$projects->Description = Input::get('Description');
-		$projects->Lang = Input::get('Lang');
+			}
+			$projects = new Project;
+			$projects->Title = Input::get('Title');
+			$projects->Description = Input::get('Description');
+			$projects->Lang = Input::get('Lang');
 
-		if (Input::hasFile('image'))
-		{
+			if (Input::hasFile('image'))
+			{
 			$file = Input::file('image');
 			$name = $projects->Title .'.jpg';
 			$file = $file->move(public_path().'/asset/image', $name);
 			$projects->Image = $name;
-		}
-		$projects->save();
+			}
+			$projects->save();
 
-		// $project = new project;
-		// $project->Title = Input::get('Title');
-		// $project->Description = Input::get('Description');
-		
-		// $project->save();
+			// $project = new project;
+			// $project->Title = Input::get('Title');
+			// $project->Description = Input::get('Description');
 
-		
+			// $project->save();
 
-		return Redirect:: to('dashboard')->withMessage('Save was Successful');
-		
-	}
 
-	
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
+
+			return Redirect:: to('dashboard')->withMessage('Save was Successful');
+
+			}
+
+
+		/**
+		* Display the specified resource.
+		*
+		* @param int $id
+		* @return Response
+		*/
+	 
 	public function show($id)
 	{
 		//
