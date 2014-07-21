@@ -31,33 +31,32 @@ public function create()
 */
 public function store()
 {
-$validation = Validator:: make(Input::all(), Project::$rules);
+	$validation = Validator:: make(Input::all(), Project::$rules);
 
-if($validation-> fails()){
-return Redirect::back()->withInput()->withErrors($validation->messages());
-}
-$projects = new Project;
-$projects->Title = Input::get('Title');
-$projects->Description = Input::get('Description');
-$projects->Lang = Input::get('Lang');
+	if ($validation->fails()) {
+		return Redirect::back()->withInput()->withErrors($validation->messages());
+	}
+	$projects = new Project;
+	$projects->Title = Input::get('Title');
+	$projects->Description = Input::get('Description');
+	$projects->Lang = Input::get('Lang');
+	$projects->Link= Input::get('Link');
 
-if (Input::hasFile('image'))
-{
-$imgName = Input::file('image');
-$name = $projects->Title.'.jpg';
-$imgName = $imgName->move(public_path().'/asset/image', $name);
+	if (Input::hasFile('Image')) {
+		$img = Input::file('Image');
+		$name = $projects->Title.'.jpg';
+		$projects->Image = $name;
 
+		$imageObj = Image::make($img);
+		$imageObj->resize(300, null, function ($constraint) {
+		    $constraint->aspectRatio();
+		})->save(public_path().'/asset/image/'.$name);
 
-$imageSize = Image::make($name)->getRealPath();
-$imageSize->save(public_path(). $name)->resize(300, null, true)->save($name);
+	}
 
-$projects->Image = $name;
-}
+	$projects->save();
 
-$projects->save();
-
-
-return Redirect:: to('dashboard')->withMessage('Save was Successful');
+	return Redirect::to('dashboard')->withMessage('Save was Successful');
 
 }
 
@@ -97,24 +96,27 @@ return View::make('public.editPage')->withproject($projects);
 public function update($id)
 {
 
-$projects= Project::find($id);
-$projects->Title = Input::get('Title');
-$projects->Description = Input::get('Description');
-$projects->Lang = Input::get('Lang');
+	$projects= Project::find($id);
+	$projects->Title = Input::get('Title');
+	$projects->Description = Input::get('Description');
+	$projects->Lang = Input::get('Lang');
+	$projects->Link= Input::get('Link');
 
-if (Input::hasFile('image'))
-{
-$file = Input::file('image');
-$name = $projects->Title .'.jpg';
-$file = $file->move(public_path().'/asset/image', $name);
-$projects->Image = $name;
-}
+	if (Input::hasFile('Image')) {
+		$img = Input::file('Image');
+		$name = $projects->Title.'.jpg';
+		$projects->Image = $name;
 
+		$imageObj = Image::make($img);
+		$imageObj->resize(300, null, function ($constraint) {
+		    $constraint->aspectRatio();
+		})->save(public_path().'/asset/image/'.$name);
 
-$projects->save();
+	}
 
+	$projects->save();
 
-return Redirect:: to('dashboard')->withMessage('The Data has been changed');
+	return Redirect:: to('dashboard')->withMessage('The Data has been changed');
 }
 
 
