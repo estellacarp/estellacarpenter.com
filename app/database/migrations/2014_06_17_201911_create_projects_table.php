@@ -17,8 +17,10 @@ class CreateProjectsTable extends Migration {
 			$table->increments('id');
 			$table->string('Title')->unique();
 			$table->string('Description');
-			$table->string('Image');
+			$table->string('ImageBig');
+			$table->string('ImageSmall');
 			$table->string('Lang');
+			$table->string('link');
 			$table->timestamps();
 		});
 	}
