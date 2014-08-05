@@ -26,8 +26,13 @@
 </div>
 
 <div class ='form-group'>
+<<<<<<< HEAD
 {{Form::label('ImageBig','Image Upload:')}}
 {{Form::file('ImageBig' , null, ['class' => 'form-control'])}}
+=======
+{{Form::label('Image','Image Upload:')}}
+{{Form::file('Image' , null, ['class' => 'form-control'])}}
+>>>>>>> origin/master
 </div>
 
 
