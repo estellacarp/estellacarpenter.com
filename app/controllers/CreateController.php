@@ -44,10 +44,14 @@ public function create()
 public function store()
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/**$validation = Validator:: make(Input::all(), Project::$rules);
 =======
 	$validation = Validator:: make(Input::all(), Project::$rules);
 >>>>>>> origin/master
+=======
+	$validation = Validator:: make(Input::all(), Project::$rules);
+>>>>>>> 5b9f6a94a0aa5615d2a8488026c6c3b69e35b298
 
 	if ($validation->fails()) {
 		return Redirect::back()->withInput()->withErrors($validation->messages());
@@ -58,6 +62,7 @@ public function store()
 	$projects->Lang = Input::get('Lang');
 	$projects->Link= Input::get('Link');
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	if (Input::hasFile('ImageBig')) {
 		$img = Input::file('ImageBig');
@@ -76,6 +81,8 @@ public function store()
 		    $constraint->aspectRatio();
 			})->save(public_path().'/asset/image/'.$nameBig);
 =======
+=======
+>>>>>>> 5b9f6a94a0aa5615d2a8488026c6c3b69e35b298
 	if (Input::hasFile('Image')) {
 		$img = Input::file('Image');
 		$name = $projects->Title.'.jpg';
@@ -85,11 +92,15 @@ public function store()
 		$imageObj->resize(300, null, function ($constraint) {
 		    $constraint->aspectRatio();
 		})->save(public_path().'/asset/image/'.$name);
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> 5b9f6a94a0aa5615d2a8488026c6c3b69e35b298
 
 	}
 
 	$projects->save();
+<<<<<<< HEAD
 <<<<<<< HEAD
 	*/
 
@@ -97,6 +108,9 @@ public function store()
 =======
 
 >>>>>>> origin/master
+=======
+
+>>>>>>> 5b9f6a94a0aa5615d2a8488026c6c3b69e35b298
 	return Redirect::to('dashboard')->withMessage('Save was Successful');
 
 }
@@ -144,6 +158,7 @@ public function update($id)
 	$projects->Link= Input::get('Link');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if (Input::hasFile('ImageBig')) {
 		$img = Input::file('ImageBig');
 		$nameBig = $projects->Title.'big';
@@ -161,6 +176,8 @@ public function update($id)
 		    $constraint->aspectRatio();
 			})->save(public_path().'/asset/image/'.$nameBig);
 =======
+=======
+>>>>>>> 5b9f6a94a0aa5615d2a8488026c6c3b69e35b298
 	if (Input::hasFile('Image')) {
 		$img = Input::file('Image');
 		$name = $projects->Title.'.jpg';
@@ -170,7 +187,10 @@ public function update($id)
 		$imageObj->resize(300, null, function ($constraint) {
 		    $constraint->aspectRatio();
 		})->save(public_path().'/asset/image/'.$name);
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> 5b9f6a94a0aa5615d2a8488026c6c3b69e35b298
 
 	}
 

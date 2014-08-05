@@ -32,7 +32,10 @@
 =======
 {{Form::label('Image','Image Upload:')}}
 {{Form::file('Image' , null, ['class' => 'form-control'])}}
+<<<<<<< HEAD
 >>>>>>> origin/master
+=======
+>>>>>>> 5b9f6a94a0aa5615d2a8488026c6c3b69e35b298
 </div>
 
 
