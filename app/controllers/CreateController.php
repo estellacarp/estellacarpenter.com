@@ -43,7 +43,11 @@ public function create()
 */
 public function store()
 {
+<<<<<<< HEAD
 	/**$validation = Validator:: make(Input::all(), Project::$rules);
+=======
+	$validation = Validator:: make(Input::all(), Project::$rules);
+>>>>>>> origin/master
 
 	if ($validation->fails()) {
 		return Redirect::back()->withInput()->withErrors($validation->messages());
@@ -54,6 +58,7 @@ public function store()
 	$projects->Lang = Input::get('Lang');
 	$projects->Link= Input::get('Link');
 
+<<<<<<< HEAD
 	if (Input::hasFile('ImageBig')) {
 		$img = Input::file('ImageBig');
 		$nameBig = $projects->Title.'big';
@@ -70,13 +75,28 @@ public function store()
 		$imageObjb->resize(500, null, function ($constraint) {
 		    $constraint->aspectRatio();
 			})->save(public_path().'/asset/image/'.$nameBig);
+=======
+	if (Input::hasFile('Image')) {
+		$img = Input::file('Image');
+		$name = $projects->Title.'.jpg';
+		$projects->Image = $name;
+
+		$imageObj = Image::make($img);
+		$imageObj->resize(300, null, function ($constraint) {
+		    $constraint->aspectRatio();
+		})->save(public_path().'/asset/image/'.$name);
+>>>>>>> origin/master
 
 	}
 
 	$projects->save();
+<<<<<<< HEAD
 	*/
 
 	$projects=$this->project->inputData();
+=======
+
+>>>>>>> origin/master
 	return Redirect::to('dashboard')->withMessage('Save was Successful');
 
 }
@@ -123,6 +143,7 @@ public function update($id)
 	$projects->Lang = Input::get('Lang');
 	$projects->Link= Input::get('Link');
 
+<<<<<<< HEAD
 	if (Input::hasFile('ImageBig')) {
 		$img = Input::file('ImageBig');
 		$nameBig = $projects->Title.'big';
@@ -139,6 +160,17 @@ public function update($id)
 		$imageObjb->resize(400, null, function ($constraint) {
 		    $constraint->aspectRatio();
 			})->save(public_path().'/asset/image/'.$nameBig);
+=======
+	if (Input::hasFile('Image')) {
+		$img = Input::file('Image');
+		$name = $projects->Title.'.jpg';
+		$projects->Image = $name;
+
+		$imageObj = Image::make($img);
+		$imageObj->resize(300, null, function ($constraint) {
+		    $constraint->aspectRatio();
+		})->save(public_path().'/asset/image/'.$name);
+>>>>>>> origin/master
 
 	}
 
