@@ -6,6 +6,12 @@
 
 <H1>Hello this is the create a new project</H1>
 
+@if (isset($errors))
+<pre>
+{{ print_r($errors) }}
+</pre>
+@endif
+
 
 
 {{Form::open(['url' => 'save','class'=>'form', 'files'=>true])}}
