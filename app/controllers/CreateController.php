@@ -1,6 +1,18 @@
-<?php
+<?php 
 
-class CreateController extends \BaseController {
+use Repository\DBinputInterface;
+
+class CreateController extends BaseController {
+
+	/**
+	*@var app\Repository\DBinput
+	*/
+
+	protected $projects;
+
+	public function __construct(DBinputInterface $projects){
+		$this->project = $projects;
+	}
 
 /**
 * Display a listing of the resource.
@@ -31,33 +43,10 @@ public function create()
 */
 public function store()
 {
-$validation = Validator:: make(Input::all(), Project::$rules);
+	
+	$projects=$this->project->inputData();
 
-if($validation-> fails()){
-return Redirect::back()->withInput()->withErrors($validation->messages());
-}
-$projects = new Project;
-$projects->Title = Input::get('Title');
-$projects->Description = Input::get('Description');
-$projects->Lang = Input::get('Lang');
-
-if (Input::hasFile('image'))
-{
-$imgName = Input::file('image');
-$name = $projects->Title.'.jpg';
-$imgName = $imgName->move(public_path().'/asset/image', $name);
-
-
-$imageSize = Image::make($name)->getRealPath();
-$imageSize->save(public_path(). $name)->resize(300, null, true)->save($name);
-
-$projects->Image = $name;
-}
-
-$projects->save();
-
-
-return Redirect:: to('dashboard')->withMessage('Save was Successful');
+	return Redirect::to('dashboard')->withMessage('Save was Successful');
 
 }
 
@@ -97,24 +86,9 @@ return View::make('public.editPage')->withproject($projects);
 public function update($id)
 {
 
-$projects= Project::find($id);
-$projects->Title = Input::get('Title');
-$projects->Description = Input::get('Description');
-$projects->Lang = Input::get('Lang');
+	$projects=$this->project->UpdateData($id);
 
-if (Input::hasFile('image'))
-{
-$file = Input::file('image');
-$name = $projects->Title .'.jpg';
-$file = $file->move(public_path().'/asset/image', $name);
-$projects->Image = $name;
-}
-
-
-$projects->save();
-
-
-return Redirect:: to('dashboard')->withMessage('The Data has been changed');
+	return Redirect:: to('dashboard')->withMessage('The Data has been changed');
 }
 
 

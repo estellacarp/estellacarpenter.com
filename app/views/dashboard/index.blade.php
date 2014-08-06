@@ -25,16 +25,14 @@
 						{{ $projects->id}}
 					</li>
 				</td>
-				<!-- <td width="150px">
-					<li class = "list-group-item">
-						{{ link_to("dashboard/$projects->id", $projects->Title)}}
-					</li>
-				</td> -->
+				
 				<td>
 					<li class = "list-group-item">
-						<!-- {{$name = 'asset/image/' . $projects->Image}} -->
-					<img src="{{asset($name)}}" alt="{{ $projects->Title}}">
-					{{ $projects->Title}}
+						{{ $projects->Title}}
+					</li>
+					<li class = "list-group-item">
+						<!-- {{$name = 'asset/image/' . $projects->ImageSmall}} -->
+						<img src="{{asset($name)}}" alt="{{ $projects->Title}}">
 					</li>
 				</td>
 				<td width="50px">

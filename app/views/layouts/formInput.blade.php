@@ -8,6 +8,12 @@
 </div>
 
 <div class ='form-group'>
+{{Form::label('Link','Link to site:')}}
+{{Form::text('Link', null, ['class' => 'form-control'])}}
+{{$errors->first('Link')}}
+</div>
+
+<div class ='form-group'>
 {{Form::label('Description','Description:')}}
 {{Form::textarea('Description' , null, ['class' => 'form-control'])}}
 {{$errors->first('Description')}}
@@ -20,8 +26,8 @@
 </div>
 
 <div class ='form-group'>
-{{Form::label('Image','Image Upload:')}}
-{{Form::file('image' , null, ['class' => 'form-control'])}}
+{{Form::label('ImageBig','Image Upload:')}}
+{{Form::file('ImageBig' , null, ['class' => 'form-control'])}}
 </div>
 
 

@@ -19,9 +19,16 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php"
 		],
+		
+		"psr-0": {
+			"Repository": "app/"
+		},
+		
 		"files": [
 			"app/helpers.php"
 		]
+
+		
 	},
 	"scripts": {
 		"post-install-cmd": [

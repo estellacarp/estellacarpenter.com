@@ -9,8 +9,10 @@
 @section('content')
 		<h1>Estella Carpenter</h1>
 		<h2>Welcome to my Portfolio</h2>
+		<h2>Estellacarp@gmail.com</h2>
+		<h2>(480)707-3730</h2>
+		<div class="container-fluid">
 		<div class="row">
-			
 		
 		@if (isset($projects))
 			@foreach ($projects as $project)
@@ -25,5 +27,6 @@
 		@else
 			<p>No Projects</p>
 		@endif
+		</div>
 		</div>
 @stop

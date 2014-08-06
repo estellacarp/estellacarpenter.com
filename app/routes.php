@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +18,7 @@ Route::get('logout', array('user'=> 'homeController@doLogout'));
 Route::get('project','ProjectController@index');
 Route::get('project/{id}','ProjectController@show');
 Route::get('project/{Title}','ProjectController@showTitle');
+Route::get('siteView','DashboardController@show');
 
 Route::get('login', 'AuthController@index');
 Route::post('login','AuthController@auth');
@@ -32,7 +33,7 @@ Route::get('dashboard/add','DashboardController@add');
 Route::get('dashboard/{id}','DashboardController@show')->where('id','\d+');
 Route::get('editPage','DashboardController@editPage');
 Route::get('editPage/{id}','DashboardController@edit');
-Route::get('siteView','DashboardController@show');
+
 Route::post('cancel', 'DashboardController@index');
 Route::get('cancel', array(''));
 
@@ -52,5 +53,9 @@ Route::get('profile', array('before' => 'auth' ,function(){}));
 
 Route::get('tasks', 'TaskController@index');
 Route::get('tasks/{id}','TaskController@show')->where('id','\d+');
+
+Route::resource('projects', 'CreateController');
+
+App::bind('Repository\DBinputInterface', 'Repository\DBinput');
 
 });

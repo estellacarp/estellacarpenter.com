@@ -15,7 +15,7 @@
 					<div class = "caption">
 						<article>
 							
-							@include('layouts/view', ['projects'=>$project])
+							@include('public/siteView', ['projects'=>$project])
 						
 						</article>
 						<a href="{{ URL ::previous() }}">Back</a>
