@@ -5,12 +5,12 @@
 @section('content')
 
 <H1>Hello this is the create a new project</H1>
-
+<!-- 
 @if (isset($errors))
 <pre>
 {{ print_r($errors) }}
 </pre>
-@endif
+@endif -->
 
 
 
